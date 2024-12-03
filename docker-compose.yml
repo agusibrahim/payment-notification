@@ -13,6 +13,6 @@ services:
       - dokploy-network
     environment:
       - NODE_ENV=production
-    entrypoint: /bin/sh -c "ls;sleep 10000"
+    entrypoint: /bin/sh -c "npm install && npm start"
 volumes:
   payment-cred:
