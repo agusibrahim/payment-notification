@@ -1,0 +1,14 @@
+networks:
+  dokploy-network:
+    external: true
+services:
+  nodeapp:
+    image: node:lts
+    container_name: qris-pay-noti
+    working_dir: /usr/src/app
+    volumes:
+      - qrisnotif:/usr/src/app
+    restart: always
+    networks:
+      - dokploy-network
+    entrypoint: /bin/sh -c "npm install && while true; do npm start; sleep 2; done"
