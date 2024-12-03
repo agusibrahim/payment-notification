@@ -237,7 +237,9 @@ function parseNotification(notification) {
     const paymentId = urlParams.searchParams.get("payment_id");
 
     // Ambil nominal transaksi dari body
-    const bodyText = notification.data.body;
+    const bodyText = notification.data.body
+      .replaceAll(".", "")
+      .replaceAll(",00", "");
     const nominalMatch = bodyText.match(/Rp(\d+)/);
     const nominalTrx = nominalMatch ? parseInt(nominalMatch[1], 10) : null;
 
