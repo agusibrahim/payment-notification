@@ -7,8 +7,10 @@ services:
     container_name: qris-pay-noti
     working_dir: /usr/src/app
     volumes:
-      - ./:/usr/src/app
-    restart: always
+      - ./src:/usr/src/app
+    restart: unless-stopped
     networks:
       - dokploy-network
-    entrypoint: /bin/sh -c "npm install && while true; do npm start; sleep 2; done"
+    environment:
+      - NODE_ENV=production
+    entrypoint: /bin/sh -c "npm install && npm start"
