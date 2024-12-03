@@ -4,11 +4,11 @@ const axios = require("axios");
 const fs = require("fs");
 require("dotenv").config();
 
-const TOKEN_FILE = "bl_auth.json";
+const TOKEN_FILE = "/usr/src/cred/bl_auth.json";
 // Path file untuk menyimpan kredensial
-const CREDENTIALS_FILE = "fcm_credentials.json";
+const CREDENTIALS_FILE = "/usr/src/cred/fcm_credentials.json";
 // Path file database SQLite
-const DATABASE_FILE = "persistentIds.db";
+const DATABASE_FILE = "/usr/src/cred/persistentIds.db";
 
 // Membuka atau membuat database SQLite
 const db = new sqlite3.Database(DATABASE_FILE);
