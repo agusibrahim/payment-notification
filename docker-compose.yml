@@ -1,17 +1,19 @@
+networks:
+  dokploy-network:
+    external: true
 services:
   nodeapp:
     image: node:lts
     container_name: qris-pay-noti
+    working_dir: /usr/src/app
     volumes:
-      - nodeapp-data:/usr/src/app
-    restart: always
+      - ./:/usr/src/app
+      - payment-cred:/usr/src/app
+    restart: unless-stopped
     networks:
       - dokploy-network
+    environment:
+      - NODE_ENV=production
     entrypoint: /bin/sh -c "npm install && npm start"
-
-networks:
-  dokploy-network:
-    external: true
-
 volumes:
-  nodeapp-data:
+  payment-cred:
