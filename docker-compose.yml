@@ -5,7 +5,6 @@ services:
   nodeapp:
     image: node:lts
     container_name: qris-pay-noti
-    working_dir: /etc/dokploy/compose/dtm-hq-qrispayment-812ceb/code
     volumes:
       - ./:/usr/src/app
       - payment-cred:/usr/src/app
@@ -14,6 +13,6 @@ services:
       - dokploy-network
     environment:
       - NODE_ENV=production
-    entrypoint: /bin/sh -c "ls;npm install && npm start"
+    entrypoint: /bin/sh -c "ls;sleep 10000"
 volumes:
   payment-cred:
