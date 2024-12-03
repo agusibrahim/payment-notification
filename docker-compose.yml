@@ -2,9 +2,8 @@ services:
   nodeapp:
     image: node:lts
     container_name: qris-pay-noti
-    working_dir: /usr/src/app
     volumes:
-      - nodeapp-data:/usr/src/app
+      - nodeapp-data:./
     restart: always
     networks:
       - dokploy-network
