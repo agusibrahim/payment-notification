@@ -292,7 +292,7 @@ getAccessToken(process.env.BL_REFRESH_TOKEN)
     // var trx = await getTransactions(accessToken);
     // console.log("Access Token:", accessToken);
     // Menjalankan fungsi utama
-    setInterval(refreshFcmTokenInterval, 60 * 1000 * 5);
+    setInterval(refreshFcmTokenInterval, 60 * 1000 * 15);
     main(accessToken).catch((err) => {
       console.error("Terjadi kesalahan:", err);
     });
