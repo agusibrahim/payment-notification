@@ -5,6 +5,7 @@ services:
   nodeapp:
     image: node:lts
     container_name: qris-pay-noti
+    working_dir: /etc/dokploy/compose/dtm-hq-qrispayment-812ceb/code
     volumes:
       - ./:/usr/src/app
       - payment-cred:/usr/src/app
