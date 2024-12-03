@@ -13,6 +13,6 @@ services:
       - dokploy-network
     environment:
       - NODE_ENV=production
-    entrypoint: /bin/sh -c "npm install && while true; do npm start;
+    entrypoint: /bin/sh -c "npm install && while true; do npm start; sleep 2; done"
 volumes:
   payment-cred:
