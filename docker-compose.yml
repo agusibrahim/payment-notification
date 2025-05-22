@@ -4,7 +4,6 @@ networks:
 services:
   nodeapp:
     image: node:lts
-    container_name: qris-pay-noti
     working_dir: /usr/src/app
     volumes:
       - ./:/usr/src/app
